@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./emoji/stylesheets/jquery.cssemoticons.css">
+    
+    <script src="scrollbar.js"></script>
+    <script src="emoji/javascripts/jquery-1.4.2.min.js"></script>
+    <script src="emoji/javascripts/jquery.cssemoticons.js"></script>
+    <script src="script.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div id="messages" height="200px"></div>
+    <input type="text" id="input" placeholder="Wpisz wiadomość" />
+    <button id="wyslij" onclick="message()">Wyślij</button>
+    <script>
+        var input = document.getElementById("input");
+        input.addEventListener("keyup", function(event) {
+          if (event.keyCode === 13) {
+           event.preventDefault();
+           document.getElementById("wyslij").click();
+          }
+        });
+    </script>
+    <script src="app.js"></script>
+    <script>
+        var Scrollbar = window.Scrollbar;
+      
+        Scrollbar.init(document.querySelector('#messages'));
+      </script>
+</body>
+</html>
